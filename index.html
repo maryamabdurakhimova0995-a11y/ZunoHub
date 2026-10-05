@@ -1,0 +1,2578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZunoHub — Social Platform</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+
+<header class="header">
+
+    <div class="logo">
+
+        <div class="logo-mark">
+            Z
+        </div>
+
+        <div>
+
+            <div class="logo-name">
+                Zuno<span>Hub</span>
+            </div>
+
+            <div class="logo-sub">
+                CONNECT · SHARE · CREATE
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="header-right">
+
+        <div class="search-box">
+
+            🔎
+
+            <input
+                id="globalSearch"
+                placeholder="Search ZunoHub..."
+                onkeydown="globalSearch(event)"
+            >
+
+        </div>
+
+
+        <button
+            class="btn secondary"
+            onclick="toggleTheme()"
+            id="themeToggle"
+            title="Toggle theme"
+        >
+            ☀️
+        </button>
+
+
+        <select
+            id="languageSelect"
+            class="language-select"
+            onchange="changeLanguage(this.value)"
+            aria-label="Language"
+        >
+            <option value="uz">UZ</option>
+            <option value="ru">RU</option>
+            <option value="en">EN</option>
+        </select>
+
+
+        <button
+            class="btn secondary"
+            onclick="openModal()"
+        >
+            ＋ Create
+        </button>
+
+
+        <div
+            class="avatar"
+            id="headerAvatar"
+            onclick="openById('profile')"
+        >
+            AK
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<div class="layout">
+
+
+<!-- =======================================================
+     SIDEBAR
+======================================================= -->
+
+<aside class="sidebar">
+
+    <div class="sidebar-label">
+        Main
+    </div>
+
+
+    <button
+        class="nav active"
+        onclick="openPage('home',this)"
+    >
+        <div class="nav-icon">🏠</div>
+        <span>Home</span>
+    </button>
+
+
+    <button
+        class="nav"
+        onclick="openPage('feed',this)"
+    >
+        <div class="nav-icon">◎</div>
+        <span>Social Feed</span>
+    </button>
+
+
+    <button
+        class="nav"
+        onclick="openPage('messages',this)"
+    >
+        <div class="nav-icon">💬</div>
+        <span>Messages</span>
+    </button>
+
+
+    <div class="sidebar-label">
+        Community
+    </div>
+
+
+    <button
+        class="nav"
+        onclick="openPage('dashboard',this)"
+    >
+        <div class="nav-icon">📊</div>
+        <span>Dashboard</span>
+    </button>
+
+
+    <button
+        class="nav"
+        onclick="openPage('community',this)"
+    >
+        <div class="nav-icon">👥</div>
+        <span>Communities</span>
+    </button>
+
+
+    <button
+        class="nav"
+        onclick="openPage('forum',this)"
+    >
+        <div class="nav-icon">🗣️</div>
+        <span>Forum</span>
+    </button>
+
+
+    <div class="sidebar-label">
+        Media
+    </div>
+
+
+    <button
+        class="nav"
+        onclick="openPage('videos',this)"
+    >
+        <div class="nav-icon">▶</div>
+        <span>Videos</span>
+    </button>
+
+
+    <button
+        class="nav"
+        onclick="openPage('blog',this)"
+    >
+        <div class="nav-icon">✍️</div>
+        <span>Blog</span>
+    </button>
+
+
+    <div class="sidebar-label">
+        Profile
+    </div>
+
+
+    <button
+        class="nav"
+        onclick="openPage('profile',this)"
+    >
+        <div class="nav-icon">👤</div>
+        <span>My Profile</span>
+    </button>
+
+</aside>
+
+
+
+<main>
+
+
+<!-- =======================================================
+     HOME
+======================================================= -->
+
+<section
+    id="home"
+    class="page active"
+>
+
+    <div class="home-hero">
+
+        <div class="home-badge">
+            ✦ SOCIAL MEDIA EXPERIENCE
+        </div>
+
+        <h1>
+            Welcome to
+            <span class="gradient">
+                ZunoHub.
+            </span>
+        </h1>
+
+        <p>
+            A modern social ecosystem combining
+            social feeds, messaging, communities,
+            forums, video, blogging and personal
+            profiles in one beautiful platform.
+        </p>
+
+
+        <div class="hero-actions">
+
+            <button
+                class="btn"
+                onclick="openById('feed')"
+            >
+                Explore ZunoHub
+            </button>
+
+
+            <button
+                class="btn secondary"
+                onclick="openModal()"
+            >
+                ＋ Create Post
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="grid-4">
+
+
+        <div
+            class="card feature-card"
+            onclick="openById('feed')"
+        >
+
+            <div class="feature-icon">
+                📸
+            </div>
+
+            <h3>
+                Social Feed
+            </h3>
+
+            <p>
+                Share posts, like content,
+                comment and interact.
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="card feature-card"
+            onclick="openById('messages')"
+        >
+
+            <div class="feature-icon">
+                💬
+            </div>
+
+            <h3>
+                Messaging
+            </h3>
+
+            <p>
+                Modern Telegram-style
+                conversations.
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="card feature-card"
+            onclick="openById('community')"
+        >
+
+            <div class="feature-icon">
+                👥
+            </div>
+
+            <h3>
+                Communities
+            </h3>
+
+            <p>
+                Discover groups and
+                communities.
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="card feature-card"
+            onclick="openById('videos')"
+        >
+
+            <div class="feature-icon">
+                ▶
+            </div>
+
+            <h3>
+                Video
+            </h3>
+
+            <p>
+                Explore a modern video
+                platform interface.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =======================================================
+     SOCIAL FEED
+======================================================= -->
+
+<section
+    id="feed"
+    class="page"
+>
+
+    <div class="page-head">
+
+        <div>
+
+            <div class="page-title">
+                Social Feed
+            </div>
+
+            <div class="page-desc">
+                Instagram-inspired social experience
+            </div>
+
+        </div>
+
+
+        <button
+            class="btn"
+            onclick="openModal()"
+        >
+            ＋ Post
+        </button>
+
+    </div>
+
+
+
+    <div class="stories"
+         id="storiesContainer">
+
+
+        <div
+            class="story"
+            onclick="openStoryModal()"
+        >
+
+            <div class="story-avatar">
+
+                <div class="story-avatar-inner">
+                    ＋
+                </div>
+
+            </div>
+
+            <div class="story-name">
+                Your story
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div
+        class="feed-layout"
+    >
+
+        <div
+            id="feedPosts"
+            class="feed-posts"
+        >
+        </div>
+
+
+        <aside class="feed-side">
+
+
+            <div class="card profile-mini">
+
+                <div
+                    class="avatar large"
+                    id="feedAvatar"
+                >
+                    AK
+                </div>
+
+                <div>
+
+                    <strong id="feedProfileName">
+                        Karomatxon
+                    </strong>
+
+                    <span>
+                        @karomatxon
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="side-title">
+                    Suggested for you
+                </div>
+
+
+                <div class="suggestion">
+
+                    <div class="small-avatar">
+                        KA
+                    </div>
+
+                    <div class="suggestion-info">
+
+                        <strong>
+                            Kamila
+                        </strong>
+
+                        <span>
+                            @kamila
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="follow-btn"
+                        onclick="followUser(this)"
+                    >
+                        Follow
+                    </button>
+
+                </div>
+
+
+                <div class="suggestion">
+
+                    <div class="small-avatar">
+                        JS
+                    </div>
+
+                    <div class="suggestion-info">
+
+                        <strong>
+                            Jasur
+                        </strong>
+
+                        <span>
+                            @jasur
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="follow-btn"
+                        onclick="followUser(this)"
+                    >
+                        Follow
+                    </button>
+
+                </div>
+
+
+                <div class="suggestion">
+
+                    <div class="small-avatar">
+                        MN
+                    </div>
+
+                    <div class="suggestion-info">
+
+                        <strong>
+                            Madina
+                        </strong>
+
+                        <span>
+                            @madina
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="follow-btn"
+                        onclick="followUser(this)"
+                    >
+                        Follow
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     MESSAGES
+======================================================= -->
+
+<section
+    id="messages"
+    class="page"
+>
+
+    <div class="page-head">
+
+        <div>
+
+            <div class="page-title">
+                Messages
+            </div>
+
+            <div class="page-desc">
+                Connect and chat with your community
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="chat-layout">
+
+
+        <div class="chat-list card">
+
+
+            <div class="chat-search">
+
+                <input
+                    id="chatSearch"
+                    placeholder="Search conversations..."
+                    oninput="filterChats(this.value)"
+                >
+
+            </div>
+
+
+            <div
+                id="chatUsers"
+                class="chat-users"
+            >
+
+
+                <div
+                    class="chat-user active"
+                    data-chat="kamila"
+                    onclick="selectChat('kamila')"
+                >
+
+                    <div class="chat-avatar">
+                        KA
+                    </div>
+
+                    <div class="chat-user-info">
+
+                        <strong>
+                            Kamila
+                        </strong>
+
+                        <span>
+                            Hey! How are you?
+                        </span>
+
+                    </div>
+
+                    <small>
+                        14:03
+                    </small>
+
+                </div>
+
+
+
+                <div
+                    class="chat-user"
+                    data-chat="jasur"
+                    onclick="selectChat('jasur')"
+                >
+
+                    <div class="chat-avatar">
+                        JS
+                    </div>
+
+                    <div class="chat-user-info">
+
+                        <strong>
+                            Jasur
+                        </strong>
+
+                        <span>
+                            Let's build something!
+                        </span>
+
+                    </div>
+
+                    <small>
+                        13:45
+                    </small>
+
+                </div>
+
+
+
+                <div
+                    class="chat-user"
+                    data-chat="madina"
+                    onclick="selectChat('madina')"
+                >
+
+                    <div class="chat-avatar">
+                        MN
+                    </div>
+
+                    <div class="chat-user-info">
+
+                        <strong>
+                            Madina
+                        </strong>
+
+                        <span>
+                            Nice project 🔥
+                        </span>
+
+                    </div>
+
+                    <small>
+                        12:21
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="chat-window card">
+
+
+            <div class="chat-head">
+
+                <div class="chat-avatar">
+                    KA
+                </div>
+
+                <div>
+
+                    <strong id="activeChatName">
+                        Kamila
+                    </strong>
+
+                    <span id="activeChatStatus">
+                        Online
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="messages"
+                id="messagesList"
+            >
+
+
+                <div class="message">
+
+                    Hey! How are you?
+
+                    <div class="message-time">
+                        14:01
+                    </div>
+
+                </div>
+
+
+
+                <div class="message me">
+
+                    I'm good! Working on ZunoHub 😄
+
+                    <div class="message-time">
+                        14:02
+                    </div>
+
+                </div>
+
+
+
+                <div class="message">
+
+                    Wow! It looks amazing.
+
+                    <div class="message-time">
+                        14:03
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="chat-compose">
+
+                <input
+                    id="messageInput"
+                    placeholder="Write a message..."
+                    onkeydown="sendByEnter(event)"
+                    autocomplete="off"
+                >
+
+
+                <button
+                    class="btn"
+                    onclick="sendMessage()"
+                >
+                    Send
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     DASHBOARD
+======================================================= -->
+
+<section
+    id="dashboard"
+    class="page"
+>
+
+    <div class="page-head">
+
+        <div>
+
+            <div class="page-title">
+                Social Media Dashboard
+            </div>
+
+            <div class="page-desc">
+                Overview of your ZunoHub activity
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="grid-4">
+
+
+        <div class="card stat">
+
+            <div class="stat-icon">
+                👁️
+            </div>
+
+            <div class="stat-value">
+                48.6K
+            </div>
+
+            <div class="stat-label">
+                Profile Views
+            </div>
+
+            <div class="progress">
+                <span style="width:78%"></span>
+            </div>
+
+        </div>
+
+
+
+        <div class="card stat">
+
+            <div class="stat-icon">
+                ❤️
+            </div>
+
+            <div class="stat-value">
+                12.8K
+            </div>
+
+            <div class="stat-label">
+                Total Likes
+            </div>
+
+            <div class="progress">
+                <span style="width:68%"></span>
+            </div>
+
+        </div>
+
+
+
+        <div class="card stat">
+
+            <div class="stat-icon">
+                👥
+            </div>
+
+            <div class="stat-value">
+                8.4K
+            </div>
+
+            <div class="stat-label">
+                Followers
+            </div>
+
+            <div class="progress">
+                <span style="width:56%"></span>
+            </div>
+
+        </div>
+
+
+
+        <div class="card stat">
+
+            <div class="stat-icon">
+                💬
+            </div>
+
+            <div class="stat-value">
+                3.2K
+            </div>
+
+            <div class="stat-label">
+                Messages
+            </div>
+
+            <div class="progress">
+                <span style="width:42%"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="dashboard-grid">
+
+
+        <div class="card">
+
+            <div class="card-head">
+
+                <div>
+
+                    <h3>
+                        Engagement
+                    </h3>
+
+                    <p>
+                        Last 7 days
+                    </p>
+
+                </div>
+
+                <span class="badge success">
+                    +18.4%
+                </span>
+
+            </div>
+
+
+            <div class="chart">
+
+                <div class="chart-bars">
+
+                    <span style="height:42%"></span>
+                    <span style="height:60%"></span>
+                    <span style="height:48%"></span>
+                    <span style="height:74%"></span>
+                    <span style="height:65%"></span>
+                    <span style="height:88%"></span>
+                    <span style="height:78%"></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-head">
+
+                <div>
+
+                    <h3>
+                        Recent Activity
+                    </h3>
+
+                    <p>
+                        Latest actions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity-list">
+
+
+                <div class="activity">
+
+                    <div class="activity-icon">
+                        ❤️
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            New like
+                        </strong>
+
+                        <span>
+                            Kamila liked your post
+                        </span>
+
+                    </div>
+
+                    <small>
+                        2m
+                    </small>
+
+                </div>
+
+
+
+                <div class="activity">
+
+                    <div class="activity-icon">
+                        💬
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            New comment
+                        </strong>
+
+                        <span>
+                            Jasur commented on your post
+                        </span>
+
+                    </div>
+
+                    <small>
+                        15m
+                    </small>
+
+                </div>
+
+
+
+                <div class="activity">
+
+                    <div class="activity-icon">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            New follower
+                        </strong>
+
+                        <span>
+                            Madina started following you
+                        </span>
+
+                    </div>
+
+                    <small>
+                        1h
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     COMMUNITY
+======================================================= -->
+
+<section
+    id="community"
+    class="page"
+>
+
+    <div class="page-head">
+
+        <div>
+
+            <div class="page-title">
+                Communities
+            </div>
+
+            <div class="page-desc">
+                Find people with the same interests
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="community-grid">
+
+
+        <div class="card community-card">
+
+            <div class="community-cover design-cover">
+                🎨
+            </div>
+
+            <div class="community-body">
+
+                <div class="community-icon">
+                    UI
+                </div>
+
+                <h3>
+                    UI/UX Designers
+                </h3>
+
+                <p>
+                    Design inspiration, feedback
+                    and resources.
+                </p>
+
+                <div class="community-meta">
+                    <span>
+                        👥 18.4K members
+                    </span>
+
+                    <button
+                        class="btn small"
+                        onclick="joinCommunity(this,'UI/UX Designers')"
+                    >
+                        Join
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card community-card">
+
+            <div class="community-cover code-cover">
+                💻
+            </div>
+
+            <div class="community-body">
+
+                <div class="community-icon">
+                    JS
+                </div>
+
+                <h3>
+                    JavaScript Developers
+                </h3>
+
+                <p>
+                    Build, share and learn
+                    modern JavaScript.
+                </p>
+
+                <div class="community-meta">
+
+                    <span>
+                        👥 26.7K members
+                    </span>
+
+                    <button
+                        class="btn small"
+                        onclick="joinCommunity(this,'JavaScript Developers')"
+                    >
+                        Join
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card community-card">
+
+            <div class="community-cover startup-cover">
+                🚀
+            </div>
+
+            <div class="community-body">
+
+                <div class="community-icon">
+                    ST
+                </div>
+
+                <h3>
+                    Startup Builders
+                </h3>
+
+                <p>
+                    Ideas, startups, products
+                    and entrepreneurship.
+                </p>
+
+                <div class="community-meta">
+
+                    <span>
+                        👥 12.3K members
+                    </span>
+
+                    <button
+                        class="btn small"
+                        onclick="joinCommunity(this,'Startup Builders')"
+                    >
+                        Join
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card community-card">
+
+            <div class="community-cover learning-cover">
+                📚
+            </div>
+
+            <div class="community-body">
+
+                <div class="community-icon">
+                    LE
+                </div>
+
+                <h3>
+                    Learning Hub
+                </h3>
+
+                <p>
+                    Study together and
+                    share useful resources.
+                </p>
+
+                <div class="community-meta">
+
+                    <span>
+                        👥 31.1K members
+                    </span>
+
+                    <button
+                        class="btn small"
+                        onclick="joinCommunity(this,'Learning Hub')"
+                    >
+                        Join
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     FORUM
+======================================================= -->
+
+<section
+    id="forum"
+    class="page"
+>
+
+    <div class="page-head">
+
+        <div>
+
+            <div class="page-title">
+                Community Forum
+            </div>
+
+            <div class="page-desc">
+                Ask questions, discuss ideas and help others
+            </div>
+
+        </div>
+
+
+        <button
+            class="btn"
+            onclick="openForumModal()"
+        >
+            ＋ New Discussion
+        </button>
+
+    </div>
+
+
+    <div class="forum-layout">
+
+
+        <div class="card forum-list">
+
+
+            <div class="forum-toolbar">
+
+                <div class="forum-tabs">
+
+                    <button
+                        class="forum-tab active"
+                        onclick="filterForum('all',this)"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        class="forum-tab"
+                        onclick="filterForum('popular',this)"
+                    >
+                        Popular
+                    </button>
+
+                    <button
+                        class="forum-tab"
+                        onclick="filterForum('recent',this)"
+                    >
+                        Recent
+                    </button>
+
+                </div>
+
+
+                <input
+                    class="forum-search"
+                    id="forumSearch"
+                    placeholder="Search discussions..."
+                    oninput="searchForum(this.value)"
+                >
+
+            </div>
+
+
+            <div
+                id="forumTopics"
+                class="forum-topics"
+            >
+
+
+                <div
+                    class="forum-row"
+                    data-category="popular"
+                    onclick="openDiscussion(1)"
+                >
+
+                    <div class="forum-main">
+
+                        <div class="forum-icon">
+                            🎨
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Favorite UI design tools?
+                            </h3>
+
+                            <p>
+                                What tools do you use
+                                for your design workflow?
+                            </p>
+
+                            <div class="forum-tags">
+
+                                <span>
+                                    design
+                                </span>
+
+                                <span>
+                                    tools
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="forum-stats">
+
+                        <strong>
+                            128
+                        </strong>
+
+                        <span>
+                            replies
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    class="forum-row"
+                    data-category="recent"
+                    onclick="openDiscussion(2)"
+                >
+
+                    <div class="forum-main">
+
+                        <div class="forum-icon">
+                            🚀
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                What are you building this month?
+                            </h3>
+
+                            <p>
+                                Share your current project
+                                and get feedback.
+                            </p>
+
+                            <div class="forum-tags">
+
+                                <span>
+                                    projects
+                                </span>
+
+                                <span>
+                                    feedback
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="forum-stats">
+
+                        <strong>
+                            84
+                        </strong>
+
+                        <span>
+                            replies
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    class="forum-row"
+                    data-category="popular"
+                    onclick="openDiscussion(3)"
+                >
+
+                    <div class="forum-main">
+
+                        <div class="forum-icon">
+                            📚
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Share useful learning resources
+                            </h3>
+
+                            <p>
+                                Courses, websites and
+                                books that helped you.
+                            </p>
+
+                            <div class="forum-tags">
+
+                                <span>
+                                    learning
+                                </span>
+
+                                <span>
+                                    resources
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="forum-stats">
+
+                        <strong>
+                            211
+                        </strong>
+
+                        <span>
+                            replies
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <aside class="forum-side">
+
+
+            <div class="card">
+
+                <h3>
+                    Forum Rules
+                </h3>
+
+                <ul class="rules">
+
+                    <li>
+                        Be respectful
+                    </li>
+
+                    <li>
+                        Keep discussions useful
+                    </li>
+
+                    <li>
+                        No spam
+                    </li>
+
+                    <li>
+                        Help other members
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Popular Tags
+                </h3>
+
+                <div class="tag-cloud">
+
+                    <span>javascript</span>
+                    <span>design</span>
+                    <span>startup</span>
+                    <span>html</span>
+                    <span>css</span>
+                    <span>career</span>
+                    <span>learning</span>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     VIDEOS
+======================================================= -->
+
+<section
+    id="videos"
+    class="page"
+>
+
+    <div class="page-head">
+
+        <div>
+
+            <div class="page-title">
+                Videos
+            </div>
+
+            <div class="page-desc">
+                Learn, create and discover
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="video-layout">
+
+
+        <div class="video-main card">
+
+            <div class="video-player">
+
+                <iframe
+                    id="videoFrame"
+                    src="https://www.youtube.com/embed/UB1O30fR-EE"
+                    title="HTML Tutorial"
+                    allowfullscreen
+                ></iframe>
+
+            </div>
+
+
+            <div class="video-info">
+
+                <h2 id="videoTitle">
+                    HTML Full Course
+                </h2>
+
+                <p id="videoDescription">
+                    Learn the fundamentals of HTML
+                    and build your first webpage.
+                </p>
+
+                <div class="video-meta">
+                    <span>
+                        ▶ 24K views
+                    </span>
+
+                    <span>
+                        👍 1.8K
+                    </span>
+
+                    <span>
+                        2 weeks ago
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <aside class="video-sidebar card">
+
+            <div class="side-title">
+                Up Next
+            </div>
+
+
+            <div
+                class="video-item active"
+                onclick="changeVideo(
+                    'UB1O30fR-EE',
+                    'HTML Full Course',
+                    'Learn the fundamentals of HTML and build your first webpage.'
+                )"
+            >
+
+                <div class="video-thumb">
+                    HTML
+                </div>
+
+                <div>
+
+                    <strong>
+                        HTML Full Course
+                    </strong>
+
+                    <span>
+                        24K views
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="video-item"
+                onclick="changeVideo(
+                    'PkZNo7MFNFg',
+                    'JavaScript Tutorial',
+                    'Learn JavaScript fundamentals from scratch.'
+                )"
+            >
+
+                <div class="video-thumb">
+                    JS
+                </div>
+
+                <div>
+
+                    <strong>
+                        JavaScript Tutorial
+                    </strong>
+
+                    <span>
+                        18K views
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="video-item"
+                onclick="changeVideo(
+                    'yfoY53QXEnI',
+                    'CSS Course',
+                    'Learn modern CSS layouts and styling.'
+                )"
+            >
+
+                <div class="video-thumb">
+                    CSS
+                </div>
+
+                <div>
+
+                    <strong>
+                        CSS Course
+                    </strong>
+
+                    <span>
+                        15K views
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="video-item"
+                onclick="changeVideo(
+                    'SqcY0GlETPk',
+                    'React Tutorial',
+                    'Build modern interfaces with React.'
+                )"
+            >
+
+                <div class="video-thumb">
+                    ⚛️
+                </div>
+
+                <div>
+
+                    <strong>
+                        React Tutorial
+                    </strong>
+
+                    <span>
+                        12K views
+                    </span>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     BLOG
+======================================================= -->
+
+<section
+    id="blog"
+    class="page"
+>
+
+    <div class="page-head">
+
+        <div>
+
+            <div class="page-title">
+                ZunoHub Blog
+            </div>
+
+            <div class="page-desc">
+                Ideas, tutorials and stories for creators
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="blog-grid">
+
+
+        <article class="card blog-card">
+
+            <div class="blog-cover">
+                💻
+            </div>
+
+            <div class="blog-content">
+
+                <div class="blog-category">
+                    WEB DEVELOPMENT
+                </div>
+
+                <h2>
+                    Modern HTML in 2026
+                </h2>
+
+                <p>
+                    Learn how semantic HTML,
+                    accessibility and modern
+                    browser features can improve
+                    your websites.
+                </p>
+
+                <div class="blog-meta">
+
+                    <span>
+                        8 min read
+                    </span>
+
+                    <span>
+                        Karomatxon
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="btn secondary"
+                    onclick="openArticle('https://developer.mozilla.org/en-US/docs/Web/HTML')"
+                >
+                    Read Article →
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="card blog-card">
+
+            <div class="blog-cover">
+                ⚡
+            </div>
+
+            <div class="blog-content">
+
+                <div class="blog-category">
+                    JAVASCRIPT
+                </div>
+
+                <h2>
+                    JavaScript Essentials
+                </h2>
+
+                <p>
+                    Understand the JavaScript
+                    fundamentals every modern
+                    web developer needs.
+                </p>
+
+                <div class="blog-meta">
+
+                    <span>
+                        10 min read
+                    </span>
+
+                    <span>
+                        ZunoHub Team
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="btn secondary"
+                    onclick="openArticle('https://developer.mozilla.org/en-US/docs/Web/JavaScript')"
+                >
+                    Read Article →
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="card blog-card">
+
+            <div class="blog-cover">
+                🎨
+            </div>
+
+            <div class="blog-content">
+
+                <div class="blog-category">
+                    DESIGN
+                </div>
+
+                <h2>
+                    Better UI Design
+                </h2>
+
+                <p>
+                    Practical principles for
+                    creating clean and intuitive
+                    digital experiences.
+                </p>
+
+                <div class="blog-meta">
+
+                    <span>
+                        7 min read
+                    </span>
+
+                    <span>
+                        ZunoHub Team
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="btn secondary"
+                    onclick="openArticle('https://m3.material.io/')"
+                >
+                    Read Article →
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="card blog-card">
+
+            <div class="blog-cover">
+                🚀
+            </div>
+
+            <div class="blog-content">
+
+                <div class="blog-category">
+                    STARTUPS
+                </div>
+
+                <h2>
+                    From Idea to Product
+                </h2>
+
+                <p>
+                    A practical look at turning
+                    an idea into a working digital
+                    product.
+                </p>
+
+                <div class="blog-meta">
+
+                    <span>
+                        9 min read
+                    </span>
+
+                    <span>
+                        Karomatxon
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="btn secondary"
+                    onclick="openArticle('https://www.ycombinator.com/library')"
+                >
+                    Read Article →
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     PROFILE
+======================================================= -->
+
+<section
+    id="profile"
+    class="page"
+>
+
+    <div class="profile-page">
+
+
+        <div class="card profile-cover">
+
+            <div class="profile-cover-bg"></div>
+
+
+            <div class="profile-main">
+
+
+                <div
+                    class="profile-avatar"
+                    id="profileAvatar"
+                >
+                    AK
+                </div>
+
+
+                <div class="profile-info">
+
+                    <h1 id="profileName">
+                        Abduraximova Karomatxon
+                    </h1>
+
+                    <p id="profileUsername">
+                        @karomatxon
+                    </p>
+
+                    <p id="profileBio">
+                        Creator · Developer · Designer
+                    </p>
+
+                    <div class="profile-stats">
+
+                        <div>
+
+                            <strong id="profilePostsCount">
+                                12
+                            </strong>
+
+                            <span>
+                                Posts
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                8.4K
+                            </strong>
+
+                            <span>
+                                Followers
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                386
+                            </strong>
+
+                            <span>
+                                Following
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-actions">
+
+                    <button
+                        class="btn"
+                        onclick="openEditProfile()"
+                    >
+                        Edit Profile
+                    </button>
+
+
+                    <button
+                        class="btn secondary"
+                        onclick="openById('community')"
+                    >
+                        Community
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="profile-grid">
+
+
+            <div class="card">
+
+                <div class="card-head">
+
+                    <div>
+
+                        <h3>
+                            About
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-list">
+
+                    <div>
+                        🌍
+                        <span>
+                            Tashkent, Uzbekistan
+                        </span>
+                    </div>
+
+                    <div>
+                        💻
+                        <span>
+                            Web Developer
+                        </span>
+                    </div>
+
+                    <div>
+                        🎓
+                        <span>
+                            Learning & Building
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="card-head">
+
+                    <div>
+
+                        <h3>
+                            Recent Posts
+                        </h3>
+
+                    </div>
+
+                    <button
+                        class="text-btn"
+                        onclick="openById('feed')"
+                    >
+                        View all
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="profileRecentPosts"
+                    class="profile-posts"
+                >
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     CREATE POST MODAL
+======================================================= -->
+
+<div
+    class="modal"
+    id="createModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h2>
+                Create Post
+            </h2>
+
+            <button
+                class="close"
+                onclick="closeModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <textarea
+            id="postText"
+            class="input"
+            placeholder="What's on your mind?"
+        ></textarea>
+
+
+        <input
+            id="postImage"
+            class="input"
+            placeholder="Image URL (optional)"
+        >
+
+
+        <div class="modal-actions">
+
+            <button
+                class="btn secondary"
+                onclick="closeModal()"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                class="btn"
+                onclick="createPost()"
+            >
+                Publish
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     STORY MODAL
+======================================================= -->
+
+<div
+    class="modal"
+    id="storyModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h2>
+                Create Story
+            </h2>
+
+            <button
+                class="close"
+                onclick="closeStoryModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <input
+            id="storyText"
+            class="input"
+            placeholder="Write your story..."
+        >
+
+
+        <input
+            id="storyImage"
+            class="input"
+            placeholder="Image URL (optional)"
+        >
+
+
+        <div class="modal-actions">
+
+            <button
+                class="btn secondary"
+                onclick="closeStoryModal()"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                class="btn"
+                onclick="createStory()"
+            >
+                Add Story
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     EDIT PROFILE MODAL
+======================================================= -->
+
+<div
+    class="modal"
+    id="profileModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h2>
+                Edit Profile
+            </h2>
+
+            <button
+                class="close"
+                onclick="closeEditProfile()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <input
+            id="editName"
+            class="input"
+            placeholder="Full name"
+        >
+
+
+        <input
+            id="editUsername"
+            class="input"
+            placeholder="Username"
+        >
+
+
+        <input
+            id="editAvatar"
+            class="input"
+            placeholder="Avatar image URL"
+        >
+
+
+        <textarea
+            id="editBio"
+            class="input"
+            placeholder="Bio"
+        ></textarea>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="btn secondary"
+                onclick="closeEditProfile()"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                class="btn"
+                onclick="saveProfile()"
+            >
+                Save Changes
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     DISCUSSION MODAL
+======================================================= -->
+
+<div
+    class="modal"
+    id="discussionModal"
+>
+
+    <div class="modal-box discussion-box">
+
+        <div class="modal-head">
+
+            <h2 id="discussionTitle">
+                Discussion
+            </h2>
+
+            <button
+                class="close"
+                onclick="closeDiscussion()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            id="discussionContent"
+            class="discussion-content"
+        >
+        </div>
+
+
+        <div
+            id="discussionReplies"
+            class="discussion-replies"
+        >
+        </div>
+
+
+        <div class="reply-compose">
+
+            <input
+                id="replyInput"
+                class="input"
+                placeholder="Write a reply..."
+                onkeydown="replyByEnter(event)"
+            >
+
+
+            <button
+                class="btn"
+                onclick="addReply()"
+            >
+                Reply
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     FORUM MODAL
+======================================================= -->
+
+<div
+    class="modal"
+    id="forumModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h2>
+                New Discussion
+            </h2>
+
+            <button
+                class="close"
+                onclick="closeForumModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <input
+            id="forumTitle"
+            class="input"
+            placeholder="Discussion title"
+        >
+
+
+        <br><br>
+
+
+        <textarea
+            id="forumText"
+            class="input"
+            placeholder="What do you want to discuss?"
+        ></textarea>
+
+
+        <br><br>
+
+
+        <button
+            class="btn"
+            onclick="createDiscussion()"
+        >
+            Publish Discussion
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     TOAST
+======================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+>
+    Done
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
